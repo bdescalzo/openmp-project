@@ -1,0 +1,19 @@
+CÓDIGO:
+
+#codigo
+    -> paralelo // Código paralelo, reparto estático en todas las funciones.
+    -> paralelo_dynamic // Código paralelo, reparto dinámico en todas las funciones con schedule(runtime), para hacer pruebas (ver script_ejecucion.sh).
+    -> paralelo_optim // Código paralelo con los repartos optimizados para 64 núcleos, acorde a los resultados obtenidos en las ejecuciones.
+    -> serie // Código en serie, sin instrucciones pragma.
+
+NOTA: En las carpetas con código paralelizado, hay un fichero llamado 'script_ejecucion.sh'. Estos ficheros sirven para realizar una batería de ejecuciones con todas las configuraciones (diferente cantidad de hilos, diferentes estrategias de reparto...)
+
+RESULTADOS OBTENIDOS EN LAS EJECUCIONES:
+
+#resultados_evaluaciones
+    -> paralelo
+        --> reparto_estatico // Resultados obtenidos al ejecutar el código con un reparto estático de todos los bucles.
+        --> reparto_dinamico // Cada carpeta k_tareas se corresponde a una ejecución con repartos dinámicos.
+            --> n_tareas // Resultados al dinamizar el reparto en bloques de tamaño n.
+    -> serie // Resultados obtenidos al ejecutar el código sin paralelizar.
+    -> evaluaciones_express // Resultados obtenidos al probar características "sueltas", buscando demostrar alguna propiedad en concreto.
